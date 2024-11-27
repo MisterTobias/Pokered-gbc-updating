@@ -844,7 +844,11 @@ FaintEnemyPokemon:
 	ld hl, wEnemyMonBaseStats
 	ld b, NUM_STATS + 2
 .halveExpDataLoop
+	ld a, [hl]
+	and a, $01
 	srl [hl]
+	add a, [hl]
+	ld [hl], a
 	inc hl
 	dec b
 	jr nz, .halveExpDataLoop
