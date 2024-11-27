@@ -835,10 +835,14 @@ FaintEnemyPokemon:
 	ld hl, wEnemyMonBaseStats
 	ld b, NUM_STATS + 2
 .halveExpDataLoop
-	srl [hl]
-	inc hl
-	dec b
-	jr nz, .halveExpDataLoop
+	ld a, [hl] ; load the stat value to a
+	and a, $01 ; with this we are clearing all bits but the last one
+	srl [hl] ; this is shifting the stat value right, but discarding the last bit (the even/odd bit)
+	add a, [hl] ; we are restoring the discarded bit we stored earlier
+	ld [hl], a ; store the halved stat + rounding up it in wRam
+	inc hl ; go to next stat
+	dec b ; decrease the counter
+	jr nz, .halveExpDataLoop ; if the counter isn't zero, go to next stat and repeat the process
 
 ; give exp (divided evenly) to the mons that actually fought in battle against the enemy mon that has fainted
 ; if exp all is in the bag, this will be only be half of the stat exp and normal exp, due to the above loop
