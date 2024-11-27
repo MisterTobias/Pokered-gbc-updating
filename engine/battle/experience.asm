@@ -7,6 +7,7 @@ GainExperience:
 	and a
 	jr z, .skipExpAll
 	call PrintText
+.skipExpAll
 	ld hl, wPartyMon1
 	xor a
 	ld [wWhichPokemon], a
