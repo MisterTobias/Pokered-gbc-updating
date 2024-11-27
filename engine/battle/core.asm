@@ -4667,7 +4667,7 @@ CriticalHitTest:
 	sla b                        ; (effective (base speed*2))
 	jr nc, .focusEnergyUsed
 	ld b, $ff                    ; cap at 255/256
-	jr .focusEnergyUsed
+	jr .noFocusEnergyUsed
 .focusEnergyUsed
 	sla b                        ; (effective ((base speed*2)*2))
 	jr nc, .noFocusEnergyUsed
