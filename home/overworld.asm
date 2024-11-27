@@ -681,6 +681,7 @@ CheckMapConnections::
 ; x#SPRITESTATEDATA2_IMAGEBASEOFFSET without loading any tile patterns.
 	farcall InitMapSprites
 	call LoadTileBlockMap
+	farcall RemoveAlreadyCutTrees
 	jp OverworldLoopLessDelay
 
 .didNotEnterConnectedMap
@@ -2331,6 +2332,7 @@ LoadMapData::
 	call LoadMapHeader
 	farcall InitMapSprites ; load tile pattern data for sprites
 	call LoadTileBlockMap
+	farcall RemoveAlreadyCutTrees
 	call LoadTilesetTilePatternData
 	call LoadCurrentMapView
 
