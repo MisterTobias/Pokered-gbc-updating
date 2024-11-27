@@ -1353,9 +1353,7 @@ AdjustOAMBlockYPos2:
 	add b
 	cp 112
 	jr c, .skipSettingPreviousEntrysAttribute
-	dec hl
-	ld a, 160 ; bug, sets previous OAM entry's attribute
-	ld [hli], a
+	ld a, 160
 .skipSettingPreviousEntrysAttribute
 	ld [hl], a
 	add hl, de
