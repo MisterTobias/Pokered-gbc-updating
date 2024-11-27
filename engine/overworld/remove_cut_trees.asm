@@ -13,7 +13,7 @@ CutTreeLocations:
 	db CERULEAN_CITY, 14, 9
 	db ROUTE_8, 5, 20
 	db ROUTE_8, 6, 14
-	db ROUTE_9, 4, 2
+	db ROUTE_9, 4, 3
 	db VERMILION_CITY, 9, 7
 	db ROUTE_10, 9, 4
 	db ROUTE_10, 10, 4
