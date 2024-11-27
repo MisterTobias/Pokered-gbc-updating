@@ -225,12 +225,12 @@ FightingDojoBlackbelt4AfterBattleText:
 
 FightingDojoHitmonleePokeBallText:
 	text_asm
-	; CheckEitherEventSet EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONCHAN
-	; jr z, .GetMon
-	; ld hl, FightingDojoBetterNotGetGreedyText
-	; call PrintText
-	; jr .done
-; .GetMon
+	CheckEitherEventSet EVENT_GOT_HITMONLEE, EVENT_GOT_HITMONCHAN
+	jr z, .GetMon
+	ld hl, FightingDojoBetterNotGetGreedyText
+	call PrintText
+	jr .done
+.GetMon
 	ld a, HITMONLEE
 	call DisplayPokedex
 	ld hl, .Text
