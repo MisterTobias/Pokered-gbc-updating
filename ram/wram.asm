@@ -2200,7 +2200,11 @@ ENDU
 
 wTrainerHeaderPtr:: dw
 
-	ds 6
+wCutTrees::
+; Check CutTreeLocations for the indexes
+	ds 3
+; unused?
+	ds 3
 
 ; the trainer the player must face after getting a wrong answer in the Cinnabar
 ; gym quiz
