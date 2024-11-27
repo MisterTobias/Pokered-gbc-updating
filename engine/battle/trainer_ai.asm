@@ -552,6 +552,9 @@ AIPrintItemUseAndUpdateHPBar:
 	xor a
 	ld [wHPBarType], a
 	predef UpdateHPBar2
+	push af
+	farcall DrawEnemyHUDAndHPBar
+	pop af
 	jp DecrementAICount
 
 AISwitchIfEnoughMons:
