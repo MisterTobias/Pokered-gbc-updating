@@ -82,6 +82,7 @@ PokemonTower7FWarpToMrFujiHouseScript:
 	set 2, [hl]
 	ld hl, wStatusFlags3
 	set BIT_WARP_FROM_CUR_SCRIPT, [hl]
+	predef ShowObject HS_ANNIHILAPE
 	ld a, SCRIPT_POKEMONTOWER7F_DEFAULT
 	ld [wPokemonTower7FCurScript], a
 	ld [wCurMapScript], a
