@@ -37,12 +37,11 @@ GainExperience:
 xor a ; PLAYER_PARTY_DATA
 	ld [wMonDataLocation], a
 	push hl
-
-IF DEF(_EXPBAR)
-	callba AnimateEXPBar	;joenote - animate the exp bar
-ENDC
-
+IF GEN_2_GRAPHICS
+	call AnimateEXPBar
+ELSE
 	call LoadMonData
+ENDC
 	pop hl
 	ld bc, wPartyMon1Level - wPartyMon1Exp
 	add hl, bc
@@ -465,19 +464,19 @@ PrintExpGained:
 
 
 LevelUpPokemon:
-IF DEF(_EXPBAR)
-	push hl
-	callba KeepEXPBarFull
-	pop hl
+IF GEN_2_GRAPHICS
+	call KeepEXPBarFull
+ELSE
+	ld a, [wCurEnemyLevel]
 ENDC
 
-	ld a, [wCurEnemyLVL]
-	push af		;wCurEnemyLVL is going to be used for stuff, so back up its value
+	ld a, [wCurEnemyLevel]
+	push af		;wCurEnemyLevel is going to be used for stuff, so back up its value
 	push hl	;also back up wPartyMon'X'Level
 
 	ld a, d
 	ld [hl], a
-	ld [wCurEnemyLVL], a
+	ld [wCurEnemyLevel], a
 	ld bc, wPartyMon1Species - wPartyMon1Level
 	add hl, bc	;HL = wPartyMon'X'Species
 	ld a, [hl]
@@ -563,12 +562,11 @@ ENDC
 	call PrintText
 	xor a ; PLAYER_PARTY_DATA
 	ld [wMonDataLocation], a
-
-IF DEF(_EXPBAR)
-	callba AnimateEXPBarAgain	;joenote - animate exp bar
+IF GEN_2_GRAPHICS
+	call AnimateEXPBarAgain
+ELSE
+	call LoadMonData
 ENDC
-
-	call LoadMonData	;this clobbers the species value in wd0b5, which is needed for level-up moves
 	ld d, $1
 	callab PrintStatsBox
 	call WaitForTextScrollButtonPress
@@ -588,7 +586,7 @@ ENDC
 
 	pop hl	;restore wPartyMon'X'Level
 	pop af
-	ld [wCurEnemyLVL], a
+	ld [wCurEnemyLevel], a
 	ret
 
 
