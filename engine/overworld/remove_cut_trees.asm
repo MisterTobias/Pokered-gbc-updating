@@ -1,4 +1,3 @@
-------------------- engine/overworld/remove_cut_trees.asm -------------------
 CutTreeLocations:
 ; first byte = The map the tree is on
 ; second byte = The Y coordinate of the block
