@@ -190,7 +190,7 @@ EvosMovesPointerTable:
 	dw CharmeleonEvosMoves
 	dw WartortleEvosMoves
 	dw CharizardEvosMoves
-	dw GFarfetchEvosMoves
+	dw GFarfetchdEvosMoves
 	dw FossilKabutopsEvosMoves
 	dw FossilAerodactylEvosMoves
 	dw MonGhostEvosMoves
@@ -1617,7 +1617,7 @@ MukEvosMoves:
 	db 60, ACID_ARMOR
 	db 0
 
-GSlowbroAEvosMoves:
+GSlowbroEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
@@ -1837,7 +1837,7 @@ SeakingEvosMoves:
 	db 54, AGILITY
 	db 0
 
-AmarowakEvosMoves:
+AMarowakEvosMoves:
 ; Evolutions
 	db 0
 ; Learnset
