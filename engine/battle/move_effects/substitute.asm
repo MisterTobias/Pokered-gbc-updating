@@ -62,7 +62,7 @@ SubstituteEffect_:
 	ld a, [wEnemyMonHP] ;check HP high byte
 	and a
 	jr nz, .done
-	ld hl, [wEnemyMonHp+1]
+	ld hl, wEnemyMonHP+1
 	set 0, [hl] ;set HP to 1.
 .done
 	jpfar DrawHUDsAndHPBars
