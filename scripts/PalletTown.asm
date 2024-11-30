@@ -129,7 +129,7 @@ PalletTownPlayerFollowsOakScript:
 	CheckEvent EVENT_FOLLOWED_OAK_INTO_LAB
 	jr nz, .followed_oak
 	; move player one tile left
-	ld hl, wd736
+	ld hl, wMovementFlags
 	set 1, [hl]
 	ld a, $1
 	ld [wSimulatedJoypadStatesIndex], a
