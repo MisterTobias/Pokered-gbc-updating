@@ -15,5 +15,5 @@ CeruleanMartCooltrainerFText:
 	text_far _CeruleanMartCooltrainerFText
 	text_end
 
-LavenderMartClerkText::
-	script_mart GREAT_BALL, SUPER_POTION, REVIVE, ESCAPE_ROPE, SUPER_REPEL, ANTIDOTE, BURN_HEAL, ICE_HEAL, PARLYZ_HEAL
+CeruleanMartClerkText::
+	script_mart POKE_BALL, POTION, REPEL, ANTIDOTE, BURN_HEAL, AWAKENING, PARLYZ_HEAL
