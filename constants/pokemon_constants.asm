@@ -180,7 +180,7 @@
 	const AERODACTYL         ; $AB
 	const WUGTRIO            ; $AC RF
 	const MAGNEMITE          ; $AD
-	const_skip               ; $AE FREE SLOT
+	const ANNIHILAPE         ; $AE 
 	const G_MR_MIME          ; $AF RV
 	const CHARMANDER         ; $B0
 	const SQUIRTLE           ; $B1
