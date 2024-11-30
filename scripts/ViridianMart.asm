@@ -98,5 +98,5 @@ ViridianMartCooltrainerMText:
 	text_far _ViridianMartCooltrainerMText
 	text_end
 
-ViridianClerkText:
-   script_mart POKE_BALL, ANTIDOTE, PARLYZ_HEAL, BURN_HEAL
+ViridianMartClerkText::
+	script_mart POKE_BALL, ANTIDOTE, PARLYZ_HEAL, BURN_HEAL
