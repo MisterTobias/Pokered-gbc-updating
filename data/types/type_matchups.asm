@@ -92,7 +92,7 @@ TypeEffects:
         db FLYING,       STEEL,        NOT_VERY_EFFECTIVE
         db PSYCHIC_TYPE, STEEL,        NOT_VERY_EFFECTIVE
         db BUG,          STEEL,        NOT_VERY_EFFECTIVE
-        db ROCK          STEEL,        NOT_VERY_EFFECTIVE
+        db ROCK,         STEEL,        NOT_VERY_EFFECTIVE
         db DRAGON,       STEEL,        NOT_VERY_EFFECTIVE
         db FAIRY,        STEEL,        NOT_VERY_EFFECTIVE
         db FIGHTING,     STEEL,        SUPER_EFFECTIVE
