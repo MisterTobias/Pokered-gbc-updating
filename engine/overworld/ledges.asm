@@ -41,10 +41,10 @@ HandleLedges::
 	ret z
 	push de
 	xor a
-	ld [hSpriteIndexOrTextID], a
+	ld [hSpriteIndex], a
 	ld d, $20 ; talking range in pixels (double normal range)
 	call IsSpriteInFrontOfPlayer2
-	ld a, [hSpriteIndexOrTextID]
+	ld a, [hSpriteIndex]
 	and a ; was there a sprite collision?
 	pop de
 	ret nz
