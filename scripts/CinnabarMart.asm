@@ -15,5 +15,5 @@ CinnabarMartScientistText:
 	text_far _CinnabarMartScientistText
 	text_end
 
-CinnabarClerkText:
+CinnabarMartClerkText::
 	script_mart ULTRA_BALL, GREAT_BALL, HYPER_POTION, MAX_REPEL, ESCAPE_ROPE, FULL_HEAL, REVIVE
