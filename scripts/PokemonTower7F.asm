@@ -299,5 +299,5 @@ AnnihilapeBattleText:
 	ld a, ANNIHILAPE
 	call PlayCry
 	call WaitForSoundToFinish
-	predef HiddeObject HS_POKEMON_TOWER_7F_ANNIHILAPE
+	predef HiddeObject HS_ANNIHILAPE
 	jp TextScriptEnd
