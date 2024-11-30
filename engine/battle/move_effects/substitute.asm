@@ -60,7 +60,7 @@ SubstituteEffect_:
 	call Bankswitch ; jump to routine depending on animation setting
 	ld hl, SubstituteText
 	call PrintText
-	jpab DrawHUDsAndHPBars
+	jpfar DrawHUDsAndHPBars
 .alreadyHasSubstitute
 	ld hl, HasSubstituteText
 	jr .printText
@@ -114,7 +114,7 @@ _AttackSubstitute:
 	ld a, [H_WHOSETURN]
 	xor $01
 	ld [H_WHOSETURN], a
-	callab HideSubstituteShowMonAnim ; animate the substitute breaking
+	call HideSubstituteShowMonAnim ; animate the substitute breaking
 ; flip the turn back to the way it was
 	ld a, [H_WHOSETURN]
 	xor $01
@@ -138,23 +138,16 @@ _AttackSubstitute:
 	ld [hl], a ; zero the effect of the attacker's move
 .skipnullify
 	ret
-	
-SubstituteTookDamageText:
-	TX_FAR _SubstituteTookDamageText
-	db "@"
 
-SubstituteBrokeText:
-	TX_FAR _SubstituteBrokeText
-	db "@"
 
 SubstituteText:
-	TX_FAR _SubstituteText
+	text_far _SubstituteText
 	db "@"
 
 HasSubstituteText:
-	TX_FAR _HasSubstituteText
+	text_far _HasSubstituteText
 	db "@"
 
 TooWeakSubstituteText:
-	TX_FAR _TooWeakSubstituteText
+	text_far _TooWeakSubstituteText
 	db "@"
