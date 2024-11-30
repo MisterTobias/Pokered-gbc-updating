@@ -2,11 +2,11 @@ GainExperience:
 	ld a, [wLinkState]
 	cp LINK_STATE_BATTLING
 	ret z ; return if link battle
-	ld a, [wBoostExpByExpAll] ; load in a if the EXP All is being used
-	ld hl, WithExpAllText ; this is preparing the text to show
-	and a ; check wBoostExpByExpAll value
-	jr z, .skipExpAll ; if wBoostExpByExpAll is zero, we are not using it, so we don't show anything and keep going on
-	call PrintText ; if the code reaches this point it means we have the Exp.All, so show the message
+	ld a, [wBoostExpByExpAll]
+	ld hl, WithExpAllText
+	and a
+	jr z, .skipExpAll
+	call PrintText
 .skipExpAll
 	ld hl, wPartyMon1
 	xor a
@@ -151,11 +151,12 @@ GainExperience:
 	ld a, [wWhichPokemon]
 	ld hl, wPartyMonNicks
 	call GetPartyMonName
-	ld a, [wBoostExpByExpAll] ;get using ExpAll flag
-	and a ; check the flag
-	jr nz, .skipExpText ; if there's EXP. all, skip showing any text
-	ld hl, GainedText ; there's no EXP. all, load the text to show
+	ld a, [wBoostExpByExpAll]
+	and a
+	jr nz, .skipExpText
+	ld hl, GainedText
 	call PrintText
+.skipExpText
 	xor a ; PLAYER_PARTY_DATA
 	ld [wMonDataLocation], a
 IF GEN_2_GRAPHICS
@@ -311,38 +312,6 @@ ENDC
 	predef_jump FlagActionPredef ; set the fought current enemy flag for the mon that is currently out
 
 ; divide enemy base stats, catch rate, and base exp by the number of mons gaining exp
-DivideExpDataByNumMonsGainingExp:
-	ld a, [wPartyGainExpFlags]
-	ld b, a
-	xor a
-	ld c, $8
-	ld d, $0
-.countSetBitsLoop ; loop to count set bits in wPartyGainExpFlags
-	xor a
-	srl b
-	adc d
-	ld d, a
-	dec c
-	jr nz, .countSetBitsLoop
-	cp $2
-	ret c ; return if only one mon is gaining exp
-	ld [wTempByteValue], a ; store number of mons gaining exp
-	ld hl, wEnemyMonBaseStats
-	ld c, wEnemyMonBaseExp + 1 - wEnemyMonBaseStats
-.divideLoop
-	xor a
-	ldh [hDividend], a
-	ld a, [hl]
-	ldh [hDividend + 1], a
-	ld a, [wTempByteValue]
-	ldh [hDivisor], a
-	ld b, $2
-	call Divide ; divide value by number of mons gaining exp
-	ldh a, [hQuotient + 3]
-	ld [hli], a
-	dec c
-	jr nz, .divideLoop
-	ret
 
 ; multiplies exp by 1.5
 BoostExp:
