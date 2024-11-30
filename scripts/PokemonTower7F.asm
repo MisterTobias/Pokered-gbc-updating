@@ -300,5 +300,7 @@ AnnihilapeBattleText:
 	ld a, ANNIHILAPE
 	call PlayCry
 	call WaitForSoundToFinish
-	predef HideObject HS_ANNIHILAPE
+	ld a, HS_ANNIHILAPE
+	ld [wMissableObjectIndex], a
+	predef HideObject
 	jp TextScriptEnd
