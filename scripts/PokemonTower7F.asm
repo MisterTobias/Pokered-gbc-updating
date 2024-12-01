@@ -70,9 +70,6 @@ PokemonTower7FWarpToMrFujiHouseScript:
 	ld a, HS_POKEMON_TOWER_7F_MR_FUJI
 	ld [wMissableObjectIndex], a
 	predef HideObject
-	ld a, HS_ANNIHILAPE
-	ld [wMissableObjectIndex], a
-	predef ShowObject
 	ld a, SPRITE_FACING_UP
 	ld [wSpritePlayerStateData1FacingDirection], a
 	ld a, MR_FUJIS_HOUSE
@@ -236,6 +233,9 @@ PokemonTower7FMrFujiText:
 	call PrintText
 	SetEvent EVENT_RESCUED_MR_FUJI
 	SetEvent EVENT_RESCUED_MR_FUJI_2
+	ld a, HS_ANNIHILAPE
+	ld [wMissableObjectIndex], a
+	predef ShowObject
 	ld a, HS_MR_FUJIS_HOUSE_MR_FUJI
 	ld [wMissableObjectIndex], a
 	predef ShowObject
