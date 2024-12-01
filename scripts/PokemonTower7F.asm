@@ -251,12 +251,6 @@ PokemonTower7FMrFujiText:
 	text_far _PokemonTower7FMrFujiRescueText
 	text_end
 
-PokemonTower7FAnnihilapeText:
-	text_asm
-	ld hl, AnnihilapeTrainerHeader
-	call TalkToTrainer
-	jp TextScriptEnd
-
 PokemonTower7FRocket1BattleText:
 	text_far _PokemonTower7FRocket1BattleText
 	text_end
@@ -292,6 +286,12 @@ PokemonTower7FRocket3EndBattleText:
 PokemonTower7FRocket3AfterBattleText:
 	text_far _PokemonTower7FRocket3AfterBattleText
 	text_end
+
+PokemonTower7FAnnihilapeText:
+	text_asm
+	ld hl, AnnihilapeTrainerHeader
+	call TalkToTrainer
+	jp TextScriptEnd
 
 AnnihilapeBattleText:
 	text_far _AnnihilapeBattleText
