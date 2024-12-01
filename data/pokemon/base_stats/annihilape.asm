@@ -1,4 +1,4 @@
-	db DEX_PRIMEAPE ; pokedex id
+	db DEX_ANNIHILAPE ; pokedex id
 
 	db  65, 105,  60,  95,  65
 	;   hp  atk  def  spd  spc
