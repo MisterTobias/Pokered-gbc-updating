@@ -70,6 +70,9 @@ PokemonTower7FWarpToMrFujiHouseScript:
 	ld a, HS_POKEMON_TOWER_7F_MR_FUJI
 	ld [wMissableObjectIndex], a
 	predef HideObject
+	ld a, HS_ANNIHILAPE
+	ld [wMissableObjectIndex], a
+	predef ShowObject
 	ld a, SPRITE_FACING_UP
 	ld [wSpritePlayerStateData1FacingDirection], a
 	ld a, MR_FUJIS_HOUSE
@@ -82,9 +85,6 @@ PokemonTower7FWarpToMrFujiHouseScript:
 	set 2, [hl]
 	ld hl, wStatusFlags3
 	set BIT_WARP_FROM_CUR_SCRIPT, [hl]
-	ld a, HS_ANNIHILAPE
-	ld [wMissableObjectIndex], a
-	predef ShowObject
 	ld a, SCRIPT_POKEMONTOWER7F_DEFAULT
 	ld [wPokemonTower7FCurScript], a
 	ld [wCurMapScript], a
