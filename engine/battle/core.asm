@@ -2423,11 +2423,7 @@ PartyMenuOrRockOrRun:
 	ld [wCurSpecies], a
 	call GetMonHeader
 	ld de, vFrontPic
-	call IsGhostBattle
-	push af
-	call nz, LoadMonFrontSprite
-	pop af
-	call z, LoadGhostPic
+	call LoadMonFrontSprite
 	jr .enemyMonPicReloaded
 .doEnemyMonAnimation
 	ld b, BANK(AnimationSubstitute) ; BANK(AnimationMinimizeMon)
