@@ -206,7 +206,7 @@ PokemonTower7TrainerHeader1:
 PokemonTower7TrainerHeader2:
 	trainer EVENT_BEAT_POKEMONTOWER_7_TRAINER_2, 3, PokemonTower7FRocket3BattleText, PokemonTower7FRocket3EndBattleText, PokemonTower7FRocket3AfterBattleText
 AnnihilapeTrainerHeader:
-	trainer EVENT_BEAT_ANNIHILAPE, 9, AnnihilapeBattleText, AnnihilapeBattleText, AnnihilapeBattleText
+	trainer EVENT_BEAT_ANNIHILAPE, 3, AnnihilapeBattleText, AnnihilapeBattleText, AnnihilapeBattleText
 	db -1 ; end
 
 PokemonTower7FRocket1Text:
@@ -299,7 +299,4 @@ AnnihilapeBattleText:
 	ld a, ANNIHILAPE
 	call PlayCry
 	call WaitForSoundToFinish
-	; ld a, HS_ANNIHILAPE
-	; ld [wMissableObjectIndex], a
-	; predef HideObject
 	jp TextScriptEnd
