@@ -358,6 +358,6 @@ ELSE
 	db PAL_MEWMON    ; MEWTWO
 	db PAL_MEWMON    ; MEW
 	db PAL_PURPLEMON ; ANNIHILAPE
-	assert_table_length NUM_POKEMON + 1
+	assert_table_length NUM_POKEMON + 2
 ; Trainers use index 0 of MonsterPalettes
 ENDC
