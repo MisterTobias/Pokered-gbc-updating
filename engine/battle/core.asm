@@ -6931,6 +6931,7 @@ LoadGhostPic:
 	call LoadMonFrontSprite ; load ghost sprite
 	pop af
 	ld [wCurPartySpecies], a
+	ret
 InitWildBattle:
 	ld a, $1
 	ld [wIsInBattle], a
