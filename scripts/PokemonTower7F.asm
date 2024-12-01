@@ -233,9 +233,6 @@ PokemonTower7FMrFujiText:
 	call PrintText
 	SetEvent EVENT_RESCUED_MR_FUJI
 	SetEvent EVENT_RESCUED_MR_FUJI_2
-	ld a, HS_ANNIHILAPE
-	ld [wMissableObjectIndex], a
-	predef ShowObject
 	ld a, HS_MR_FUJIS_HOUSE_MR_FUJI
 	ld [wMissableObjectIndex], a
 	predef ShowObject
