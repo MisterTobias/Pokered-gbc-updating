@@ -173,7 +173,7 @@ PokedexEntryPointers:
 	dw AerodactylDexEntry
 	dw MissingNoDexEntry
 	dw MagnemiteDexEntry
-	dw MissingNoDexEntry
+	dw PrimeapeDexEntry
 	dw MissingNoDexEntry
 	dw CharmanderDexEntry
 	dw SquirtleDexEntry
