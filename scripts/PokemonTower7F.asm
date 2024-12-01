@@ -296,7 +296,7 @@ PokemonTower7FAnnihilapeText:
 AnnihilapeBattleText:
 	text_far _AnnihilapeBattleText
 	text_asm
-	ld a, ANNIHILAPE
+	ld a, PRIMEAPE
 	call PlayCry
 	call WaitForSoundToFinish
 	jp TextScriptEnd
