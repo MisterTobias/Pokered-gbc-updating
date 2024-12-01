@@ -79,9 +79,6 @@ MrFujisHouseMrFujiText:
 	ld hl, .ReceivedPokeFluteText
 	call PrintText
 	SetEvent EVENT_GOT_POKE_FLUTE
-	ld a, HS_ANNIHILAPE
-	ld [wMissableObjectIndex], a
-	predef ShowObject
 	jr .done
 .bag_full
 	ld hl, .PokeFluteNoRoomText
