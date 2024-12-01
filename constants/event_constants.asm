@@ -64,7 +64,7 @@
 	const EVENT_GOT_BICYCLE
 
 ; Lavender Town events
-	const_next $F0 - 2
+	const_next $EE
 	const EVENT_POKEMON_TOWER_RIVAL_ON_LEFT
 	const EVENT_BEAT_POKEMON_TOWER_RIVAL
 	const_skip
